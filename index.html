@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <title>Textarea с упоминаниями (@mentions)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="app__header">
+        <h1 class="app__title">Тестовое: упоминания в textarea</h1>
+        <p class="app__subtitle">
+          Введите <span class="app__subtitle-accent">@</span> и начните печатать, чтобы выбрать пользователя.
+        </p>
+      </header>
+
+      <main class="app__main">
+        <section class="mention-box">
+          <label for="message" class="mention-box__label">Сообщение</label>
+
+          <div class="mention-box__editor-wrapper">
+            <textarea
+              id="message"
+              class="mention-box__textarea"
+              rows="8"
+              placeholder="Например: Встречаемся завтра с @ivan ..."
+            ></textarea>
+
+            <!-- Дропдаун с пользователями -->
+            <div id="mention-dropdown" class="mention-dropdown mention-dropdown--hidden" role="listbox"></div>
+
+            <!-- Зеркальный элемент для вычисления позиции каретки -->
+            <div id="textarea-mirror" class="textarea-mirror"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./main.js"></script>
+  </body>
+  </html>
+
